@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Student Hub</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="results.html">Results</a>
+            <a href="notices.html">Notices</a>
+            <a href="profile.html" class="active">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 0.5rem;">
+                <h2>My Profile</h2>
+                <button type="button" onclick="handleLogout()" class="secondary-btn" style="padding: 0.45rem 1rem; font-size: 0.85rem; color: #475569; border-color: #cbd5e1; background: #ffffff;">
+                    Log Out
+                </button>
+            </div>
+
+            <!-- Student Profile Header with 3D Memoji Avatar -->
+            <div class="profile-header">
+                <img src="student.jpg" alt="Student 3D Memoji Avatar" class="profile-avatar">
+                <div class="profile-title">
+                    <h3 id="profile-name">Student Name</h3>
+                    <p class="profile-subtitle" id="profile-id">ID: 26CSE001</p>
+                    <span class="badge badge-success">Active Enrolled Student</span>
+                </div>
+            </div>
+
+            <h3>Student Information</h3>
+            <p><strong>Name:</strong> <span id="detail-name">Student Name</span></p>
+            <p><strong>Student ID:</strong> <span id="detail-id">26CSE001</span></p>
+            <p><strong>Course:</strong> Bachelor of Engineering - CSE</p>
+            <p><strong>Semester:</strong> 3</p>
+            <p><strong>Email:</strong> <span id="detail-email">student@cspit.edu</span></p>
+            <p><strong>Phone:</strong> 9876543210</p>
+        </section>
+
+        <section>
+            <h3>Academic Information</h3>
+            <p><strong>College:</strong> CSPIT</p>
+            <p>
+                <strong>Department:</strong>
+                Computer Science and Engineering
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>Student Hub Portal</p>
+        <p>Developed by Arshit Vaghela</p>
+    </footer>
+
+    <script>
+        // Load user info dynamically into profile
+        document.addEventListener("DOMContentLoaded", function() {
+            const storedData = localStorage.getItem("studentHubUser");
+            if (storedData) {
+                try {
+                    const user = JSON.parse(storedData);
+                    const displayName = user.name || user.username || "Arshit Vaghela";
+                    const displayId = user.studentId || user.username || "26CSE001";
+                    const displayEmail = user.email || (displayId.toLowerCase() + "@cspit.edu");
+
+                    document.getElementById("profile-name").textContent = displayName;
+                    document.getElementById("profile-id").textContent = "ID: " + displayId;
+                    document.getElementById("detail-name").textContent = displayName;
+                    document.getElementById("detail-id").textContent = displayId;
+                    document.getElementById("detail-email").textContent = displayEmail;
+                } catch (e) {
+                    document.getElementById("profile-name").textContent = storedData;
+                    document.getElementById("detail-name").textContent = storedData;
+                }
+            } else {
+                document.getElementById("profile-name").textContent = "Arshit Vaghela";
+                document.getElementById("profile-id").textContent = "ID: 26CSE001";
+                document.getElementById("detail-name").textContent = "Arshit Vaghela";
+                document.getElementById("detail-id").textContent = "26CSE001";
+                document.getElementById("detail-email").textContent = "arshit@cspit.edu";
+            }
+        });
+
+        function handleLogout() {
+            localStorage.removeItem("studentHubUser");
+            window.location.href = "login.html";
+        }
+    </script>
+    <script src="nav.js"></script>
+</body>
+</html>

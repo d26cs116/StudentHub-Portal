@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Login & Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Student Hub</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="results.html">Results</a>
+            <a href="notices.html">Notices</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html" class="active">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="auth-card" style="margin: 1rem auto; width: 100%; max-width: 480px;">
+
+            <!-- Status Alert Message -->
+            <div id="auth-alert" class="auth-alert"></div>
+
+            <!-- ================= LOGIN FORM ================= -->
+            <div id="login-container">
+                <h2 id="auth-heading">Student Login</h2>
+                <p class="section-description" style="margin-bottom: 1rem;">Enter your student credentials to access your dashboard.</p>
+
+                <form id="login-form" onsubmit="handleLogin(event)">
+
+                    <label for="student-id">Student ID / Username:</label>
+                    <input
+                        type="text"
+                        id="student-id"
+                        name="student-id"
+                        placeholder="e.g. 26CSE001 or Arshit"
+                        required>
+
+                    <label for="password">Password:</label>
+                    <div class="password-box">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter password"
+                            required>
+                        <button
+                            type="button"
+                            class="eye-btn"
+                            onclick="togglePassword('password', this)"
+                            aria-label="Show password">
+                            👁
+                        </button>
+                    </div>
+
+                    <input
+                        type="submit"
+                        value="Login to Dashboard">
+
+                </form>
+
+                <div class="auth-switch">
+                    Don't have an account? 
+                    <a href="#" onclick="showRegister(event)">Create Account</a>
+                </div>
+            </div>
+
+            <!-- ================= CREATE ACCOUNT FORM ================= -->
+            <div id="register-container" style="display: none;">
+                <h2>Create Account</h2>
+                <p class="section-description" style="margin-bottom: 1rem;">Register as a new student on the Student Hub portal.</p>
+
+                <form id="register-form" onsubmit="handleRegister(event)">
+
+                    <label for="reg-name">Full Name:</label>
+                    <input
+                        type="text"
+                        id="reg-name"
+                        name="reg-name"
+                        placeholder="e.g. Arshit Vaghela"
+                        required>
+
+                    <label for="reg-id">Student ID / Roll No:</label>
+                    <input
+                        type="text"
+                        id="reg-id"
+                        name="reg-id"
+                        placeholder="e.g. 26CSE001"
+                        required>
+
+                    <label for="reg-email">College Email:</label>
+                    <input
+                        type="email"
+                        id="reg-email"
+                        name="reg-email"
+                        placeholder="e.g. student@cspit.edu"
+                        required>
+
+                    <label for="reg-password">Create Password:</label>
+                    <div class="password-box">
+                        <input
+                            type="password"
+                            id="reg-password"
+                            name="reg-password"
+                            placeholder="Choose a strong password"
+                            required>
+                        <button
+                            type="button"
+                            class="eye-btn"
+                            onclick="togglePassword('reg-password', this)"
+                            aria-label="Show password">
+                            👁
+                        </button>
+                    </div>
+
+                    <input
+                        type="submit"
+                        value="Create Account & Login">
+
+                </form>
+
+                <div class="auth-switch">
+                    Already have an account? 
+                    <a href="#" onclick="showLogin(event)">Back to Login</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Student Hub Portal</p>
+        <p>Developed by Arshit Vaghela</p>
+    </footer>
+
+    <script>
+        // Toggle password show/hide
+        function togglePassword(inputId, button) {
+            const passwordInput = document.getElementById(inputId);
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                button.textContent = "🙈";
+                button.setAttribute("aria-label", "Hide password");
+            } else {
+                passwordInput.type = "password";
+                button.textContent = "👁";
+                button.setAttribute("aria-label", "Show password");
+            }
+        }
+
+        // Switch to Create Account form
+        function showRegister(event) {
+            event.preventDefault();
+            document.getElementById("login-container").style.display = "none";
+            document.getElementById("register-container").style.display = "block";
+            hideAlert();
+        }
+
+        // Switch to Login form
+        function showLogin(event) {
+            event.preventDefault();
+            document.getElementById("register-container").style.display = "none";
+            document.getElementById("login-container").style.display = "block";
+            hideAlert();
+        }
+
+        function showAlert(msg, isSuccess = true) {
+            const alertBox = document.getElementById("auth-alert");
+            alertBox.textContent = msg;
+            alertBox.style.display = "block";
+            alertBox.style.backgroundColor = isSuccess ? "#ecfdf5" : "#fef2f2";
+            alertBox.style.color = isSuccess ? "#065f46" : "#991b1b";
+            alertBox.style.borderColor = isSuccess ? "#a7f3d0" : "#fecaca";
+        }
+
+        function hideAlert() {
+            const alertBox = document.getElementById("auth-alert");
+            alertBox.style.display = "none";
+        }
+
+        // Handle Login Submission
+        function handleLogin(event) {
+            event.preventDefault();
+            const studentId = document.getElementById("student-id").value.trim();
+            const password = document.getElementById("password").value;
+
+            if (!studentId || !password) {
+                showAlert("Please enter both Student ID and Password.", false);
+                return;
+            }
+
+            // Check if registered user exists in storage
+            let existingUser = null;
+            try {
+                const stored = localStorage.getItem("registeredUser_" + studentId.toLowerCase());
+                if (stored) {
+                    existingUser = JSON.parse(stored);
+                }
+            } catch (e) {}
+
+            const displayName = existingUser ? existingUser.name : studentId;
+
+            // Save active session
+            const sessionUser = {
+                username: studentId,
+                name: displayName,
+                studentId: studentId,
+                email: existingUser ? existingUser.email : (studentId + "@student.edu"),
+                loggedInAt: new Date().toISOString()
+            };
+
+            localStorage.setItem("studentHubUser", JSON.stringify(sessionUser));
+
+            showAlert(`Welcome, ${displayName}! Logging into Dashboard...`, true);
+
+            setTimeout(() => {
+                window.location.href = "dashboard.html";
+            }, 600);
+        }
+
+        // Handle Create Account Submission
+        function handleRegister(event) {
+            event.preventDefault();
+            const name = document.getElementById("reg-name").value.trim();
+            const studentId = document.getElementById("reg-id").value.trim();
+            const email = document.getElementById("reg-email").value.trim();
+            const password = document.getElementById("reg-password").value;
+
+            if (!name || !studentId || !email || !password) {
+                showAlert("Please complete all fields to register.", false);
+                return;
+            }
+
+            const newUser = {
+                name: name,
+                username: studentId,
+                studentId: studentId,
+                email: email,
+                registeredAt: new Date().toISOString()
+            };
+
+            // Store registered user and active session
+            localStorage.setItem("registeredUser_" + studentId.toLowerCase(), JSON.stringify(newUser));
+            localStorage.setItem("studentHubUser", JSON.stringify(newUser));
+
+            showAlert(`Account created successfully for ${name}! Redirecting to Dashboard...`, true);
+
+            setTimeout(() => {
+                window.location.href = "dashboard.html";
+            }, 600);
+        }
+    </script>
+
+    <script src="nav.js"></script>
+</body>
+
+</html>
