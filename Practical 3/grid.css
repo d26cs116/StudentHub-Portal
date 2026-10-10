@@ -1,0 +1,91 @@
+/* =========================================================
+   grid.css – layouts built with CSS GRID
+   Used on: dashboard.html, profile.html, attendance.html,
+   timetable.html (loaded after style.css)
+   ========================================================= */
+
+/* Label/value details (dashboard + profile) */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0 2rem;
+    margin-top: 0.8rem;
+}
+.info-grid p { padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
+
+/* Dashboard: academic summary placed with named areas */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "att att pend sgpa"
+        "att att note note";
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.summary-tile {
+    display: grid;
+    align-content: space-between;
+    gap: 0.6rem;
+    padding: 1.2rem;
+    border-radius: 16px;
+    background: var(--mist);
+}
+.summary-tile h4 { font-size: 0.95rem; }
+.summary-tile strong { font-family: 'Bricolage Grotesque', sans-serif; font-size: 2.6rem; line-height: 1; }
+.summary-tile p { color: var(--muted); font-size: 0.9rem; }
+.tile-att  { grid-area: att; background: var(--board); color: #fff; }
+.tile-att strong { font-size: 4.5rem; }
+.tile-pend { grid-area: pend; background: var(--mustard); }
+.tile-sgpa { grid-area: sgpa; }
+.tile-note { grid-area: note; }
+
+.meter { height: 10px; border-radius: 9px; background: var(--mist); }
+.meter i { display: block; height: 100%; border-radius: inherit; background: var(--sub, var(--board)); }
+.tile-att .meter { background: rgba(255, 255, 255, 0.2); }
+.tile-att .meter i { background: var(--mustard); }
+
+/* Attendance: auto-fit card grid */
+.attendance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.att-card {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1.1rem;
+    border: 1px solid var(--line);
+    border-top: 6px solid var(--sub);
+    border-radius: 14px;
+}
+.att-card h3 { margin: 0; font-size: 1.05rem; }
+.att-card .pct { font-family: 'Bricolage Grotesque', sans-serif; font-size: 2.4rem; font-weight: 800; line-height: 1; }
+.att-card small { color: var(--muted); }
+
+/* Timetable: 6-column grid (day + 5 lecture slots) */
+.tt-grid {
+    display: grid;
+    grid-template-columns: 110px repeat(5, minmax(90px, 1fr));
+    min-width: 660px;
+    margin-top: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+}
+.tt-grid > * { padding: 0.85rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.tt-head { background: var(--mist); font-weight: 700; font-size: 0.85rem; }
+.tt-day { font-weight: 700; }
+.tt-cell { display: grid; place-items: center; background: var(--sub); color: var(--on, #fff); font-weight: 700; }
+
+@media (max-width: 900px) {
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "att att" "pend sgpa" "note note";
+    }
+}
+@media (max-width: 560px) {
+    .summary-grid { grid-template-columns: 1fr; grid-template-areas: "att" "pend" "sgpa" "note"; }
+    .tile-att strong { font-size: 3.6rem; }
+}
