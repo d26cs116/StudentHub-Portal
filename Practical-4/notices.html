@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Notices</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flexbox.css">
+</head>
+<body class="portal">
+    <header>
+        <div class="logo">Student Hub</div>
+        <nav id="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="results.html">Results</a>
+            <a href="notices.html" class="active">Notices</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+        </nav>
+        <div class="header-actions">
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">🌙</span> Dark</button>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>College Notices</h2>
+            <div class="notice-feed">
+                <article class="notice">
+                    <time datetime="2026-08-16"><b>16</b>AUG</time>
+                    <div class="notice-body"><h3>Internal Exam Schedule</h3><p>The internal examination schedule will be displayed soon.</p></div>
+                </article>
+            <article class="notice">
+                    <time datetime="2026-08-15"><b>15</b>AUG</time>
+                    <div class="notice-body"><h3>Assignment Submission</h3><p>Students are requested to submit pending assignments before the due date.</p></div>
+                </article>
+            <article class="notice">
+                    <time datetime="2026-08-12"><b>12</b>AUG</time>
+                    <div class="notice-body"><h3>Holiday Notice</h3><p>College will remain closed on the upcoming holiday.</p></div>
+                </article>
+            <article class="notice">
+                    <time datetime="2026-08-10"><b>10</b>AUG</time>
+                    <div class="notice-body"><h3>Library Update</h3><p>Library timings have been updated for this semester.</p></div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Student Hub Portal</p>
+        <p>Developed by Arshit Vaghela</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
