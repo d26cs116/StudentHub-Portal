@@ -1,0 +1,50 @@
+/* =========================================================
+   flexbox.css – layouts built with FLEXBOX
+   Used on: assignments.html, notices.html (loaded after style.css)
+   ========================================================= */
+
+/* Assignments: each row is a flex container */
+.task-list { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 1rem; }
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    padding: 1rem 1.3rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 6px solid var(--sub);
+    border-radius: 12px;
+}
+.task-info { flex: 1 1 240px; }
+.task-info strong { display: block; font-size: 1.05rem; }
+.task-info span { color: var(--muted); font-size: 0.9rem; }
+.task-due { display: flex; align-items: center; flex-wrap: wrap; gap: 0.8rem; }
+.task-due > span:first-child { color: var(--muted); font-size: 0.9rem; }
+
+/* Notices: date block + text side by side */
+.notice-feed { display: flex; flex-direction: column; }
+.notice { display: flex; align-items: flex-start; gap: 1.2rem; }
+.notice time {
+    flex: none;
+    width: 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+    background: var(--board);
+    color: #fff;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.notice time b { font-size: 1.5rem; line-height: 1; }
+.notice-body { flex: 1 1 auto; }
+.notice-body p { color: var(--muted); }
+
+@media (max-width: 480px) {
+    .notice { flex-direction: column; gap: 0.6rem; }
+    .notice time { flex-direction: row; gap: 0.4rem; width: auto; padding: 0.3rem 0.8rem; }
+}

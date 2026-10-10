@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Hub - Home</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="portal">
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">Student Hub</div>
+
+        <nav id="main-nav" aria-label="Main navigation">
+            <a href="index.html" class="active">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="results.html">Results</a>
+            <a href="notices.html">Notices</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="registration.html">Register</a>
+            <a href="login.html">Login</a>
+        </nav>
+        <div class="header-actions">
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">🌙</span> Dark</button>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <div class="notice-banner" id="notice-banner" role="status">
+        <p>📢 <strong>Notice:</strong> The internal exam schedule will be displayed soon. <a href="notices.html">Read all notices</a></p>
+        <button type="button" class="banner-close" id="banner-close" aria-label="Dismiss notification">✕</button>
+    </div>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main>
+
+        <!-- HERO SECTION -->
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <p class="welcome-text">
+                    STUDENT PORTAL
+                </p>
+
+                <h1>
+                    Welcome to <span>Student Hub</span>
+                </h1>
+
+                <p class="hero-description">
+                    A simple and organized portal for students to
+                    manage academic information, assignments,
+                    attendance, results and daily activities.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="dashboard.html" class="primary-btn">
+                        Go to Dashboard
+                    </a>
+
+                    <a href="profile.html" class="secondary-btn">
+                        View Profile
+                    </a>
+
+                    <button type="button" id="open-modal" class="secondary-btn" aria-haspopup="dialog">
+                        Quick Guide
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="hero-icon">
+                🎓
+            </div>
+
+        </section>
+
+
+        <!-- ================= STUDENT STATS ================= -->
+
+        <section class="stats-section">
+
+            <h2>Student Overview</h2>
+
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div>
+                        <h3>85%</h3>
+                        <p>Attendance</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <div>
+                        <h3>3</h3>
+                        <p>Pending Assignments</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <div>
+                        <h3>8.2</h3>
+                        <p>Current SGPA</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📢</div>
+                    <div>
+                        <h3>4</h3>
+                        <p>New Notices</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CAMPUS UPDATES SLIDER ================= -->
+
+        <section class="slider-section" aria-labelledby="slider-title">
+
+            <h2 id="slider-title">Campus Updates</h2>
+
+            <div class="slider" id="slider" role="group" aria-roledescription="carousel" aria-label="Campus updates">
+
+                <div class="slider-track" id="slider-track">
+
+                    <div class="slide slide-1">
+                        <span class="slide-tag">📅 16 Aug 2026</span>
+                        <h3>Internal Exam Schedule</h3>
+                        <p>The internal examination schedule will be displayed soon.</p>
+                        <a href="notices.html">Read notice →</a>
+                    </div>
+
+                    <div class="slide slide-2">
+                        <span class="slide-tag">📝 15 Aug 2026</span>
+                        <h3>Assignment Submission</h3>
+                        <p>Students are requested to submit pending assignments before the due date.</p>
+                        <a href="assignments.html">View assignments →</a>
+                    </div>
+
+                    <div class="slide slide-3">
+                        <span class="slide-tag">🏫 12 Aug 2026</span>
+                        <h3>Holiday Notice</h3>
+                        <p>College will remain closed on the upcoming holiday.</p>
+                        <a href="notices.html">Read notice →</a>
+                    </div>
+
+                    <div class="slide slide-4">
+                        <span class="slide-tag">📚 10 Aug 2026</span>
+                        <h3>Library Update</h3>
+                        <p>Library timings have been updated for this semester.</p>
+                        <a href="notices.html">Read notice →</a>
+                    </div>
+
+                </div>
+
+                <button type="button" class="slider-btn prev" id="slider-prev" aria-label="Previous slide">‹</button>
+                <button type="button" class="slider-btn next" id="slider-next" aria-label="Next slide">›</button>
+
+            </div>
+
+            <div class="slider-footer">
+                <div class="slider-dots" id="slider-dots"></div>
+                <p id="slider-count" aria-live="polite">1 / 4</p>
+            </div>
+
+        </section>
+
+
+        <!-- ================= TODAY'S HIGHLIGHTS ================= -->
+
+        <section class="highlights-section">
+
+            <h2>Today's Highlights</h2>
+
+            <div class="highlights-container">
+
+                <div class="highlight-card">
+
+                    <div class="highlight-icon">
+                        📚
+                    </div>
+
+                    <div>
+                        <h3>Academic Updates</h3>
+
+                        <p>
+                            Check your latest assignments and
+                            academic information.
+                        </p>
+
+                        <a href="assignments.html">
+                            View Assignments →
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="highlight-card">
+
+                    <div class="highlight-icon">
+                        🗓️
+                    </div>
+
+                    <div>
+                        <h3>Today's Schedule</h3>
+
+                        <p>
+                            View your class timetable and
+                            plan your day.
+                        </p>
+
+                        <a href="timetable.html">
+                            View Timetable →
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="highlight-card">
+
+                    <div class="highlight-icon">
+                        📢
+                    </div>
+
+                    <div>
+                        <h3>Latest Notices</h3>
+
+                        <p>
+                            Stay updated with important
+                            college announcements.
+                        </p>
+
+                        <a href="notices.html">
+                            View Notices →
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUICK LINKS ================= -->
+
+        <section class="quick-links">
+
+            <h2>Quick Links</h2>
+
+            <p class="section-description">
+                Quickly access the most frequently used
+                student services.
+            </p>
+
+            <div class="cards">
+
+                <a href="attendance.html" class="card">
+
+                    <div class="icon">
+                        📅
+                    </div>
+
+                    <h3>
+                        Attendance
+                    </h3>
+
+                    <p>
+                        Check Attendance
+                    </p>
+
+                </a>
+
+
+                <a href="assignments.html" class="card">
+
+                    <div class="icon">
+                        📁
+                    </div>
+
+                    <h3>
+                        Assignments
+                    </h3>
+
+                    <p>
+                        View Assignments
+                    </p>
+
+                </a>
+
+
+                <a href="results.html" class="card">
+
+                    <div class="icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        Results
+                    </h3>
+
+                    <p>
+                        View Results
+                    </p>
+
+                </a>
+
+
+                <a href="timetable.html" class="card">
+
+                    <div class="icon">
+                        🕐
+                    </div>
+
+                    <h3>
+                        Timetable
+                    </h3>
+
+                    <p>
+                        View Timetable
+                    </p>
+
+                </a>
+
+
+                <a href="notices.html" class="card">
+
+                    <div class="icon">
+                        📢
+                    </div>
+
+                    <h3>
+                        Notices
+                    </h3>
+
+                    <p>
+                        View Notices
+                    </p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WHY STUDENT HUB ================= -->
+
+        <section class="features-section">
+
+            <h2>Why Student Hub?</h2>
+
+            <div class="features-container">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Easy to Use
+                    </h3>
+
+                    <p>
+                        Simple navigation makes it easy
+                        to find academic information.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📂
+                    </div>
+
+                    <h3>
+                        Organized
+                    </h3>
+
+                    <p>
+                        Keep attendance, assignments,
+                        results and notices in one place.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        Responsive
+                    </h3>
+
+                    <p>
+                        Access the Student Hub comfortably
+                        on different screen sizes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FAQ ================= -->
+
+        <section class="faq-section" aria-labelledby="faq-title">
+
+            <h2 id="faq-title">Frequently Asked Questions</h2>
+
+            <p class="section-description">Click a question to see the answer.</p>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3 class="faq-heading">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
+                            <span>How do I check my attendance?</span><span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+                    <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+                        <p>Open the Attendance page from the menu. It shows the total classes, classes attended and the attendance percentage for every subject.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-heading">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
+                            <span>Where can I see my pending assignments?</span><span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+                    <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
+                        <p>Go to the Assignments page. Each assignment shows its subject, due date and whether it is Pending or Submitted.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-heading">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
+                            <span>How are my results displayed?</span><span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+                    <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
+                        <p>The Results page lists your marks and grade for each subject, along with your semester SGPA.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-heading">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
+                            <span>How do I log in to Student Hub?</span><span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+                    <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+                        <p>Use the Login page and enter your Student ID or username with your password. New students can choose Create Account on the same page.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-heading">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">
+                            <span>Can I use Student Hub in dark mode?</span><span class="faq-icon" aria-hidden="true">+</span>
+                        </button>
+                    </h3>
+                    <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
+                        <p>Yes. Press the Dark / Light button in the top bar. The portal remembers your choice the next time you open it.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CALL TO ACTION ================= -->
+
+        <section class="cta-section">
+
+            <h2>
+                Ready to explore your Student Hub?
+            </h2>
+
+            <p>
+                Access your dashboard and manage your
+                academic information easily.
+            </p>
+
+            <a href="dashboard.html" class="cta-button">
+                Explore Dashboard
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Student Hub Portal
+        </p>
+
+        <p>
+            Developed by Arshit Vaghela
+        </p>
+
+    </footer>
+
+    <!-- ================= QUICK GUIDE MODAL ================= -->
+
+    <div class="modal-overlay" id="guide-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+        <div class="modal-box">
+            <button type="button" class="modal-close" aria-label="Close quick guide" data-close-modal>✕</button>
+            <h2 id="modal-title">Student Hub Quick Guide</h2>
+            <p id="modal-desc">Here is what you can do in each part of the portal.</p>
+            <ul class="guide-list">
+                <li><strong>📊 Dashboard</strong> – <span>your details and academic summary</span></li>
+                <li><strong>📅 Attendance</strong> – <span>classes attended in every subject</span></li>
+                <li><strong>📝 Assignments</strong> – <span>due dates and submission status</span></li>
+                <li><strong>🕐 Timetable</strong> – <span>your weekly class schedule</span></li>
+                <li><strong>🏆 Results</strong> – <span>marks, grades and SGPA</span></li>
+                <li><strong>📢 Notices</strong> – <span>latest college announcements</span></li>
+            </ul>
+            <div class="modal-actions">
+                <a href="dashboard.html" class="primary-btn">Go to Dashboard</a>
+                <button type="button" class="modal-secondary" data-close-modal>Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

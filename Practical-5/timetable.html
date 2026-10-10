@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Timetable</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body class="portal">
+    <header>
+        <div class="logo">Student Hub</div>
+        <nav id="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="timetable.html" class="active">Timetable</a>
+            <a href="results.html">Results</a>
+            <a href="notices.html">Notices</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="registration.html">Register</a>
+            <a href="login.html">Login</a>
+        </nav>
+        <div class="header-actions">
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">🌙</span> Dark</button>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Class Timetable</h2>
+            <div class="tt-grid" role="table" aria-label="Weekly timetable">
+                <div class="tt-head">Day</div>
+                <div class="tt-head">9:00 - 10:00</div>
+                <div class="tt-head">10:00 - 11:00</div>
+                <div class="tt-head">11:15 - 12:15</div>
+                <div class="tt-head">1:15 - 2:15</div>
+                <div class="tt-head">2:15 - 3:15</div>
+                <div class="tt-day">Monday</div><div class="tt-cell sub-dsa">DSA</div><div class="tt-cell sub-oop">OOP</div><div class="tt-cell sub-maths">Maths</div><div class="tt-cell sub-web">Web Dev</div><div class="tt-cell sub-cn">CN</div>
+                <div class="tt-day">Tuesday</div><div class="tt-cell sub-cn">CN</div><div class="tt-cell sub-dsa">DSA</div><div class="tt-cell sub-oop">OOP</div><div class="tt-cell sub-maths">Maths</div><div class="tt-cell sub-web">Web Dev</div>
+                <div class="tt-day">Wednesday</div><div class="tt-cell sub-maths">Maths</div><div class="tt-cell sub-web">Web Dev</div><div class="tt-cell sub-dsa">DSA</div><div class="tt-cell sub-cn">CN</div><div class="tt-cell sub-oop">OOP</div>
+                <div class="tt-day">Thursday</div><div class="tt-cell sub-oop">OOP</div><div class="tt-cell sub-cn">CN</div><div class="tt-cell sub-web">Web Dev</div><div class="tt-cell sub-dsa">DSA</div><div class="tt-cell sub-maths">Maths</div>
+                <div class="tt-day">Friday</div><div class="tt-cell sub-web">Web Dev</div><div class="tt-cell sub-maths">Maths</div><div class="tt-cell sub-cn">CN</div><div class="tt-cell sub-oop">OOP</div><div class="tt-cell sub-dsa">DSA</div>
+            </div>
+
+        </section>
+
+    </main>
+    <footer>
+        <p>Student Hub Portal</p>
+        <p>Developed by Arshit Vaghela</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
