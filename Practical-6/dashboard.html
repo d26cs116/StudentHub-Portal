@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body class="portal">
+    <header>
+        <div class="logo">Student Hub</div>
+        <nav id="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="results.html">Results</a>
+            <a href="notices.html">Notices</a>
+            <a href="explore.html">Explore</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.html">Contact</a>
+            <a href="registration.html">Register</a>
+            <a href="login.html">Login</a>
+        </nav>
+        <div class="header-actions">
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">🌙</span> Dark</button>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <div class="notice-banner" id="notice-banner" role="status">
+        <p>📢 <strong>Notice:</strong> You have 3 pending assignments. Check the due dates before you miss them. <a href="assignments.html">View assignments</a></p>
+        <button type="button" class="banner-close" id="banner-close" aria-label="Dismiss notification">✕</button>
+    </div>
+
+    <main>
+        <section>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h2>Dashboard</h2>
+                    <p style="margin: 0;">
+                        Welcome back to Student Hub, <span id="welcome-username" class="user-highlight">Student</span>! 👋
+                    </p>
+                </div>
+                <button type="button" onclick="handleLogout()" class="secondary-btn" style="padding: 0.45rem 1rem; font-size: 0.85rem; color: #475569; border-color: #cbd5e1; background: #ffffff;">
+                    Log Out
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h3>Student Information</h3>
+            <div class="dash-profile-preview">
+                <img src="student.jpg" alt="Student Memoji Avatar" class="dash-avatar-sm">
+                <div>
+                    <h4 id="dash-card-name" style="font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 2px;">Student Name</h4>
+                    <span class="badge badge-primary" id="dash-card-badge">26CSE001</span>
+                </div>
+            </div>
+            <div class="info-grid">
+            <p><strong>Name:</strong> <span id="dash-name">Student Name</span></p>
+            <p><strong>Student ID:</strong> <span id="dash-id">26CSE001</span></p>
+            <p><strong>Course:</strong> Bachelor of Engineering - CSE</p>
+            <p><strong>Semester:</strong> 3</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Academic Summary</h3>
+            <div class="summary-grid">
+            <div class="summary-tile tile-att"><h4>Attendance</h4><strong>85%</strong><div class="meter"><i style="width:85%"></i></div></div>
+            <div class="summary-tile tile-pend"><h4>Pending assignments</h4><strong>3</strong></div>
+            <div class="summary-tile tile-sgpa"><h4>SGPA</h4><strong>8.2</strong></div>
+            <div class="summary-tile tile-note"><h4>New notices</h4><strong>4</strong><p>Latest: Internal Exam Schedule</p></div>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Student Hub Portal</p>
+        <p>Developed by Arshit Vaghela</p>
+    </footer>
+
+    <script>
+        // Load logged-in username dynamically from localStorage
+        document.addEventListener("DOMContentLoaded", function() {
+            const storedData = localStorage.getItem("studentHubUser");
+            if (storedData) {
+                try {
+                    const user = JSON.parse(storedData);
+                    const displayName = user.name || user.username || "Student";
+                    const displayId = user.studentId || user.username || "26CSE001";
+
+                    document.getElementById("welcome-username").textContent = displayName;
+                    document.getElementById("dash-card-name").textContent = displayName;
+                    document.getElementById("dash-card-badge").textContent = displayId;
+                    document.getElementById("dash-name").textContent = displayName;
+                    document.getElementById("dash-id").textContent = displayId;
+                } catch (e) {
+                    document.getElementById("welcome-username").textContent = storedData;
+                    document.getElementById("dash-name").textContent = storedData;
+                }
+            } else {
+                // Default placeholder
+                document.getElementById("welcome-username").textContent = "Arshit Vaghela";
+                document.getElementById("dash-card-name").textContent = "Arshit Vaghela";
+                document.getElementById("dash-name").textContent = "Arshit Vaghela";
+                document.getElementById("dash-id").textContent = "26CSE001";
+            }
+        });
+
+        // Logout function clears session and takes back to login
+        function handleLogout() {
+            localStorage.removeItem("studentHubUser");
+            window.location.href = "login.html";
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
