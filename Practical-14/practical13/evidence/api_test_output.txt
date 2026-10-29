@@ -1,0 +1,112 @@
+### 1 GET list (empty)
+HTTP 200 | application/json; charset=utf-8
+{"success":true,"message":"No notices found.","data":[],"count":0}
+
+### 2 POST add
+HTTP 201 | application/json; charset=utf-8
+{"success":true,"message":"Notice added successfully.","data":{"id":1,"title":"Sports Day","category":"Event","message":"Sports day is on Friday.","created_at":"2026-10-27 12:05:08","updated_at":"2026-10-27 12:05:08"}}
+
+### 3 POST add 2
+HTTP 201 | application/json; charset=utf-8
+{"success":true,"message":"Notice added successfully.","data":{"id":2,"title":"Diwali Holiday","category":"Holiday","message":"College closed for Diwali.","created_at":"2026-10-27 12:05:08","updated_at":"2026-10-27 12:05:08"}}
+
+### 4 GET list
+HTTP 200 | application/json; charset=utf-8
+{"success":true,"message":"2 notice(s) loaded.","data":[{"id":2,"title":"Diwali Holiday","category":"Holiday","message":"College closed for Diwali.","created_at":"2026-10-27 12:05:08","updated_at":"2026-10-27 12:05:08"},{"id":1,"title":"Sports Day","category":"Event","message":"Sports day is on Friday.","created_at":"2026-10-27 12:05:08","updated_at":"2026-10-27 12:05:08"}],"count":2}
+
+### 5 GET one
+HTTP 200 | application/json; charset=utf-8
+{"success":true,"message":"Notice loaded.","data":{"id":1,"title":"Sports Day","category":"Event","message":"Sports day is on Friday.","created_at":"2026-10-27 12:05:08","updated_at":"2026-10-27 12:05:08"}}
+
+### 6 PUT update
+HTTP 200 | application/json; charset=utf-8
+{"success":true,"message":"Notice updated successfully.","data":{"id":1,"title":"Sports Day 2026","category":"Event","message":"Sports day moved to Saturday.","created_at":"2026-10-27 12:05:08","updated_at":"2026-10-27 12:05:08"}}
+
+### 7 POST duplicate title (case differs)
+HTTP 409 | application/json; charset=utf-8
+{"success":false,"message":"A notice with this title already exists. Choose a different title.","data":null,"errors":{"title":"This title is already used."}}
+
+### 8 PUT duplicate title
+HTTP 409 | application/json; charset=utf-8
+{"success":false,"message":"A notice with this title already exists. Choose a different title.","data":null,"errors":{"title":"This title is already used."}}
+
+### 9 POST invalid input
+HTTP 400 | application/json; charset=utf-8
+{"success":false,"message":"Please correct the highlighted fields.","data":null,"errors":{"title":"Title must be 3-100 characters.","category":"Choose one of: Academic, Exam, Event, Holiday, General.","message":"Message is required."}}
+
+### 10 POST empty body
+HTTP 400 | application/json; charset=utf-8
+{"success":false,"message":"The request body is empty. Send the notice as JSON.","data":null}
+
+### 11 POST malformed JSON
+HTTP 400 | application/json; charset=utf-8
+{"success":false,"message":"The request body must be a valid JSON object.","data":null}
+
+### 12 POST JSON array
+HTTP 400 | application/json; charset=utf-8
+{"success":false,"message":"The request body must be a valid JSON object.","data":null}
+
+### 13 POST wrong types
+HTTP 400 | application/json; charset=utf-8
+{"success":false,"message":"Please correct the highlighted fields.","data":null,"errors":{"title":"Title is required.","category":"Category is required.","message":"Message is required."}}
+
+### 14 PUT missing id
+HTTP 400 | application/json; charset=utf-8
+{"success":false,"message":"An id is required, for example api.php?id=5.","data":null}
+
+### 15 PUT unknown id
+HTTP 404 | application/json; charset=utf-8
+{"success":false,"message":"Notice not found. It may already have been deleted.","data":null}
+
+### 16 DELETE missing id
+HTTP 400 | application/json; charset=utf-8
+{"success":false,"message":"An id is required, for example api.php?id=5.","data":null}
+
+### 17 DELETE bad id
+HTTP 400 | application/json; charset=utf-8
+{"success":false,"message":"The id must be a positive whole number.","data":null}
+
+### 18 DELETE id=0
+HTTP 400 | application/json; charset=utf-8
+{"success":false,"message":"The id must be a positive whole number.","data":null}
+
+### 19 DELETE unknown id
+HTTP 404 | application/json; charset=utf-8
+{"success":false,"message":"Notice not found. It may already have been deleted.","data":null}
+
+### 20 GET unknown id
+HTTP 404 | application/json; charset=utf-8
+{"success":false,"message":"Notice not found.","data":null}
+
+### 21 PATCH unsupported
+HTTP 405 | application/json; charset=utf-8
+{"success":false,"message":"Method PATCH is not allowed. Use GET, POST, PUT or DELETE.","data":null}
+
+### 22 DELETE ok
+HTTP 200 | application/json; charset=utf-8
+{"success":true,"message":"Notice deleted successfully.","data":{"id":2}}
+
+### 23 DELETE same again
+HTTP 404 | application/json; charset=utf-8
+{"success":false,"message":"Notice not found. It may already have been deleted.","data":null}
+
+### 24 SQL injection attempt in id
+HTTP 400 | application/json; charset=utf-8
+{"success":false,"message":"The id must be a positive whole number.","data":null}
+
+### 25 SQL-ish title stored literally
+HTTP 201 | application/json; charset=utf-8
+{"success":true,"message":"Notice added successfully.","data":{"id":3,"title":"x'); DROP TABLE notices;--","category":"General","message":"Injection test text","created_at":"2026-10-27 12:05:09","updated_at":"2026-10-27 12:05:09"}}
+
+### 26 XSS title stored as text
+HTTP 201 | application/json; charset=utf-8
+{"success":true,"message":"Notice added successfully.","data":{"id":4,"title":"<img src=x onerror=alert(1)>","category":"General","message":"XSS test text","created_at":"2026-10-27 12:05:09","updated_at":"2026-10-27 12:05:09"}}
+
+### 27 Unicode
+HTTP 201 | application/json; charset=utf-8
+{"success":true,"message":"Notice added successfully.","data":{"id":5,"title":"Zoë – उत्सव 🎉","category":"Event","message":"Unicode ok ✓","created_at":"2026-10-27 12:05:09","updated_at":"2026-10-27 12:05:09"}}
+
+### 28 final list
+HTTP 200 | application/json; charset=utf-8
+{"success":true,"message":"4 notice(s) loaded.","data":[{"id":5,"title":"Zoë – उत्सव 🎉","category":"Event","message":"Unicode ok ✓","created_at":"2026-10-27 12:05:09","updated_at":"2026-10-27 12:05:09"},{"id":4,"title":"<img src=x onerror=alert(1)>","category":"General","message":"XSS test text","created_at":"2026-10-27 12:05:09","updated_at":"2026-10-27 12:05:09"},{"id":3,"title":"x'); DROP TABLE notices;--","category":"General","message":"Injection test text","created_at":"2026-10-27 12:05:09","updated_at":"2026-10-27 12:05:09"},{"id":1,"title":"Sports Day 2026","category":"Event","message":"Sports day moved to Saturday.","created_at":"2026-10-27 12:05:08","updated_at":"2026-10-27 12:05:08"}],"count":4}
+

@@ -1,0 +1,177 @@
+[
+ {
+  "test": "Logged-out user opening dashboard.php is sent to login",
+  "pass": true,
+  "detail": "http://127.0.0.1:8021/login.php?status=login_required"
+ },
+ {
+  "test": "Logged-out user opening audit_logs.php is sent to login",
+  "pass": true,
+  "detail": "http://127.0.0.1:8021/login.php?status=login_required"
+ },
+ {
+  "test": "Logged-out menu has no admin/student links",
+  "pass": true,
+  "detail": "Home | Register | Login"
+ },
+ {
+  "test": "3 accounts registered through the real registration form",
+  "pass": true,
+  "detail": "[[5]]"
+ },
+ {
+  "test": "Student menu: Home, Dashboard, Student Area only (+Logout)",
+  "pass": true,
+  "detail": "Home | Dashboard | Student Area"
+ },
+ {
+  "test": "Student dashboard shows NO statistics",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Student opening every admin-only URL gets HTTP 403",
+  "pass": true,
+  "detail": "admin_dashboard.php=403, students.php=403, events.php=403, add_event.php=403, edit_event.php?id=1=403, delete_event.php?id=1=403, add_student.php=403, audit_logs.php=403, export_students.php=403"
+ },
+ {
+  "test": "403 page shows Access Denied, not the audit data",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Student direct POST to delete_event.php -> 403, nothing changed",
+  "pass": true,
+  "detail": "403"
+ },
+ {
+  "test": "Admin menu: Home, Dashboard, Admin Panel, Students, Events, Audit Logs",
+  "pass": true,
+  "detail": "Home | Dashboard | Admin Panel | Students | Events | Audit Logs"
+ },
+ {
+  "test": "Admin login wrote an ADMIN_LOGIN audit row",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Student login wrote NO audit row",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Dashboard user count matches database",
+  "pass": true,
+  "detail": "5 vs 5"
+ },
+ {
+  "test": "Dashboard student count matches database",
+  "pass": true,
+  "detail": "7 vs 7"
+ },
+ {
+  "test": "Dashboard event count matches database (0 shown, no error)",
+  "pass": true,
+  "detail": "0 vs 0"
+ },
+ {
+  "test": "Latest registrations: newest first, matches database",
+  "pass": true,
+  "detail": "Meera Joshi > Kabir Shah > Riya Patel > Test Student > Test Admin"
+ },
+ {
+  "test": "Admin may open admin_dashboard.php",
+  "pass": true,
+  "detail": "200"
+ },
+ {
+  "test": "Admin may open students.php",
+  "pass": true,
+  "detail": "200"
+ },
+ {
+  "test": "Admin may open events.php",
+  "pass": true,
+  "detail": "200"
+ },
+ {
+  "test": "Admin may open audit_logs.php",
+  "pass": true,
+  "detail": "200"
+ },
+ {
+  "test": "Add event -> event row + EVENT_CREATE audit row",
+  "pass": true,
+  "detail": "[[\"EVENT_CREATE\",\"event\",1,\"Created event \\\"Tech Fest 2026\\\"\"]]"
+ },
+ {
+  "test": "Edit event -> EVENT_UPDATE audit row",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Delete event -> row gone + EVENT_DELETE audit row (record id kept)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Add student -> STUDENT_CREATE audit row",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Edit student -> STUDENT_UPDATE audit row",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Deactivate student -> STUDENT_DEACTIVATE audit row",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Invalid (empty) event form -> nothing saved, nothing logged",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Duplicate student ID (DB error) -> nothing logged",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Deleting a missing event -> nothing logged",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Deactivating an already-inactive student -> nothing logged",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Audit Logs page lists the real rows (newest first)",
+  "pass": true,
+  "detail": "8"
+ },
+ {
+  "test": "Audit page has no edit/delete controls and no secrets",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Dashboard event count updates after actions",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "No uncaught JavaScript errors",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "No password/hash/session token stored in audit_logs",
+  "pass": true,
+  "detail": ""
+ }
+]

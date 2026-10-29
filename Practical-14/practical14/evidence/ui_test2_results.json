@@ -1,0 +1,27 @@
+[
+ {
+  "test": "Empty students/events tables -> dashboard shows 0 (no error)",
+  "pass": true,
+  "detail": "2/0/0"
+ },
+ {
+  "test": "Dashboard still lists latest registrations with only the seeded accounts",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Dashboard query failure -> safe error alert, HTTP 200, no SQL/table names leaked",
+  "pass": true,
+  "detail": "200"
+ },
+ {
+  "test": "Admin login still works when audit logging fails (logging error never blocks login)",
+  "pass": true,
+  "detail": ""
+ },
+ {
+  "test": "Audit insert fails -> whole action rolled back, event NOT saved, safe message shown",
+  "pass": true,
+  "detail": ""
+ }
+]

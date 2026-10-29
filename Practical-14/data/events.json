@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "title": "Code Sprint Hackathon",
+    "category": "Technical",
+    "date": "2026-10-24",
+    "location": "Computer Lab 3",
+    "description": "A 24-hour team hackathon where students build a working web app that solves a campus problem."
+  },
+  {
+    "id": 2,
+    "title": "Cyber Security Awareness Talk",
+    "category": "Technical",
+    "date": "2026-11-05",
+    "location": "CSE Seminar Hall",
+    "description": "An expert session on phishing, strong passwords and staying safe online."
+  },
+  {
+    "id": 3,
+    "title": "Robotics Demo Day",
+    "category": "Technical",
+    "date": "2026-11-19",
+    "location": "Mechanical Workshop Hall",
+    "description": "Student teams demonstrate line-following and obstacle-avoiding robots."
+  },
+  {
+    "id": 4,
+    "title": "AI and Machine Learning Expo",
+    "category": "Technical",
+    "date": "2026-12-10",
+    "location": "Main Auditorium",
+    "description": "Project posters and live demos of machine learning ideas built by students."
+  },
+  {
+    "id": 5,
+    "title": "Rangotsav Cultural Fest",
+    "category": "Cultural",
+    "date": "2026-11-14",
+    "location": "Open Air Theatre",
+    "description": "The annual cultural fest with dance, music and drama performances."
+  },
+  {
+    "id": 6,
+    "title": "Inter-College Debate Competition",
+    "category": "Cultural",
+    "date": "2026-10-30",
+    "location": "Library Hall",
+    "description": "Teams from nearby colleges debate current topics in front of a panel of judges."
+  },
+  {
+    "id": 7,
+    "title": "Photography Exhibition",
+    "category": "Cultural",
+    "date": "2026-12-03",
+    "location": "Gallery Corridor, Block A",
+    "description": "A showcase of the best photographs taken by students during the year."
+  },
+  {
+    "id": 8,
+    "title": "Classical Music Evening",
+    "category": "Cultural",
+    "date": "2026-12-18",
+    "location": "Main Auditorium",
+    "description": "An evening of classical vocal and instrumental performances by students and guests."
+  },
+  {
+    "id": 9,
+    "title": "Inter-Department Cricket Tournament",
+    "category": "Sports",
+    "date": "2026-10-20",
+    "location": "College Ground",
+    "description": "Department teams compete in a knockout cricket tournament."
+  },
+  {
+    "id": 10,
+    "title": "Annual Sports Day",
+    "category": "Sports",
+    "date": "2027-01-15",
+    "location": "College Ground",
+    "description": "Track events, relay races and team games for all years."
+  },
+  {
+    "id": 11,
+    "title": "Badminton Championship",
+    "category": "Sports",
+    "date": "2026-11-27",
+    "location": "Indoor Stadium",
+    "description": "Singles and doubles badminton matches open to all students."
+  },
+  {
+    "id": 12,
+    "title": "Chess Open",
+    "category": "Sports",
+    "date": "2026-12-06",
+    "location": "Student Common Room",
+    "description": "A one-day chess tournament played in the Swiss format."
+  },
+  {
+    "id": 13,
+    "title": "Web Development Workshop",
+    "category": "Workshop",
+    "date": "2026-10-17",
+    "location": "Computer Lab 1",
+    "description": "A hands-on session on building responsive pages with HTML, CSS and JavaScript."
+  },
+  {
+    "id": 14,
+    "title": "Resume and Interview Skills Workshop",
+    "category": "Workshop",
+    "date": "2026-11-11",
+    "location": "Placement Cell",
+    "description": "Learn how to write a clear resume and answer common interview questions."
+  },
+  {
+    "id": 15,
+    "title": "Networking Basics Lab Workshop",
+    "category": "Workshop",
+    "date": "2026-11-22",
+    "location": "Networking Lab",
+    "description": "Practical introduction to IP addressing, switches and routers."
+  },
+  {
+    "id": 16,
+    "title": "Git and GitHub Basics",
+    "category": "Workshop",
+    "date": "2026-12-13",
+    "location": "Computer Lab 2",
+    "description": "Learn version control by creating a repository and making your first commits."
+  },
+  {
+    "id": 17,
+    "title": "Career Guidance Seminar",
+    "category": "Seminar",
+    "date": "2026-10-28",
+    "location": "Main Auditorium",
+    "description": "Industry speakers explain career paths available after engineering."
+  },
+  {
+    "id": 18,
+    "title": "Higher Studies Abroad Seminar",
+    "category": "Seminar",
+    "date": "2026-11-18",
+    "location": "CSE Seminar Hall",
+    "description": "Information about entrance exams, applications and scholarships for higher studies."
+  },
+  {
+    "id": 19,
+    "title": "Entrepreneurship Talk by Alumni",
+    "category": "Seminar",
+    "date": "2027-01-09",
+    "location": "Main Auditorium",
+    "description": "Alumni share how they started their own companies and what they learned."
+  },
+  {
+    "id": 20,
+    "title": "Cloud Computing Industry Seminar",
+    "category": "Seminar",
+    "date": "2027-01-22",
+    "location": "Library Hall",
+    "description": "An introduction to cloud services and the jobs that use them."
+  }
+]
