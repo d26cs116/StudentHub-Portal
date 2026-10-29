@@ -1,0 +1,10 @@
+# Block direct web access to the saved submissions (Apache).
+# Visiting http://localhost/.../storage/submissions.csv must show "403 Forbidden".
+Options -Indexes
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>
