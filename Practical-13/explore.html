@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Explore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="portal">
+    <header>
+        <div class="logo">Student Hub</div>
+        <nav id="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="results.html">Results</a>
+            <a href="notices.html">Notices</a>
+            <a href="explore.html" class="active">Explore</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.php">Contact</a>
+            <a href="register.php">Register</a>
+            <a href="login.php">Login</a>
+        </nav>
+        <div class="header-actions">
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">🌙</span> Dark</button>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <main>
+        <section class="explore-section" aria-labelledby="explore-title">
+            <h2 id="explore-title">Explore Student Hub Data</h2>
+            <p class="section-description">The records on this page are loaded from JSON files using the Fetch API. Search, filter, sort and move between pages.</p>
+
+            <!-- Shown only when the page is opened by double-clicking the file (file://) -->
+            <div class="status error" id="file-warning" role="alert" hidden>
+                <strong>Please open this page through a local server.</strong>
+                <span class="status-detail">Browsers block the JSON requests when a page is opened directly from a file (file://). Run <code>python -m http.server 8000</code> inside the project folder, then open <code>http://localhost:8000/explore.html</code>.</span>
+            </div>
+
+            <div class="data-tabs" role="tablist" aria-label="Data sets">
+                <button type="button" class="data-tab" id="tab-events" role="tab" aria-selected="false" aria-controls="panel-events" data-target="events">Events</button>
+                <button type="button" class="data-tab" id="tab-students" role="tab" aria-selected="false" aria-controls="panel-students" data-target="students">Students</button>
+                <button type="button" class="data-tab" id="tab-faqs" role="tab" aria-selected="false" aria-controls="panel-faqs" data-target="faqs">FAQs</button>
+            </div>
+
+            <div class="data-panel" id="panel-events" role="tabpanel" aria-labelledby="tab-events">
+                <h3 class="panel-title">Campus Events</h3>
+                <p class="panel-intro">Upcoming events from the college. Search by title, category or location.</p>
+
+                <div class="toolbar">
+                    <div class="tool tool-search">
+                        <label for="events-search">Search</label>
+                        <input type="search" id="events-search" placeholder="Title, category or location" autocomplete="off">
+                    </div>
+                    <div class="tool">
+                        <label for="events-category">Category</label>
+                        <select id="events-category" data-filter="category"><option value="all">All</option></select>
+                    </div>
+                    <div class="tool">
+                        <label for="events-sort">Sort by</label>
+                        <select id="events-sort">
+                            <option value="date:date:asc">Date (earliest)</option>
+                            <option value="date:date:desc">Date (latest)</option>
+                            <option value="title:text:asc">Title (A–Z)</option>
+                            <option value="title:text:desc">Title (Z–A)</option>
+                        </select>
+                    </div>
+                    <div class="tool">
+                        <button type="button" class="tool-btn" id="events-reset">Reset</button>
+                    </div>
+                </div>
+
+                <p class="result-count" id="events-count" aria-live="polite"></p>
+                <div class="status" id="events-status" role="status" aria-live="polite"></div>
+                <div class="card-grid" id="events-list" hidden></div>
+
+                <div class="pagination" id="events-pagination" role="navigation" aria-label="Campus Events pages" hidden>
+                    <button type="button" class="page-btn" id="events-prev">Previous</button>
+                    <span class="page-label" id="events-page" aria-live="polite">Page 1 of 1</span>
+                    <button type="button" class="page-btn" id="events-next">Next</button>
+                </div>
+            </div>
+            <div class="data-panel" id="panel-students" role="tabpanel" aria-labelledby="tab-students">
+                <h3 class="panel-title">Student Directory</h3>
+                <p class="panel-intro">Sample student records (fictional data). Search by name, email or course.</p>
+
+                <div class="toolbar">
+                    <div class="tool tool-search">
+                        <label for="students-search">Search</label>
+                        <input type="search" id="students-search" placeholder="Name, email or course" autocomplete="off">
+                    </div>
+                    <div class="tool">
+                        <label for="students-course">Course</label>
+                        <select id="students-course" data-filter="course"><option value="all">All</option></select>
+                    </div>
+                    <div class="tool">
+                        <label for="students-year">Year</label>
+                        <select id="students-year" data-filter="year"><option value="all">All</option></select>
+                    </div>
+                    <div class="tool">
+                        <label for="students-sort">Sort by</label>
+                        <select id="students-sort">
+                            <option value="id:number:asc">Default order</option>
+                            <option value="name:text:asc">Name (A–Z)</option>
+                            <option value="name:text:desc">Name (Z–A)</option>
+                            <option value="year:number:asc">Year (low–high)</option>
+                            <option value="year:number:desc">Year (high–low)</option>
+                        </select>
+                    </div>
+                    <div class="tool">
+                        <button type="button" class="tool-btn" id="students-reset">Reset</button>
+                    </div>
+                </div>
+
+                <p class="result-count" id="students-count" aria-live="polite"></p>
+                <div class="status" id="students-status" role="status" aria-live="polite"></div>
+                <div class="table-area" id="students-list" hidden></div>
+
+                <div class="pagination" id="students-pagination" role="navigation" aria-label="Student Directory pages" hidden>
+                    <button type="button" class="page-btn" id="students-prev">Previous</button>
+                    <span class="page-label" id="students-page" aria-live="polite">Page 1 of 1</span>
+                    <button type="button" class="page-btn" id="students-next">Next</button>
+                </div>
+            </div>
+            <div class="data-panel" id="panel-faqs" role="tabpanel" aria-labelledby="tab-faqs">
+                <h3 class="panel-title">Frequently Asked Questions</h3>
+                <p class="panel-intro">Answers to common questions about Student Hub. Search by question or answer.</p>
+
+                <div class="toolbar">
+                    <div class="tool tool-search">
+                        <label for="faqs-search">Search</label>
+                        <input type="search" id="faqs-search" placeholder="Question or answer" autocomplete="off">
+                    </div>
+                    <div class="tool">
+                        <label for="faqs-category">Category</label>
+                        <select id="faqs-category" data-filter="category"><option value="all">All</option></select>
+                    </div>
+                    <div class="tool">
+                        <label for="faqs-sort">Sort by</label>
+                        <select id="faqs-sort">
+                            <option value="id:number:asc">Default order</option>
+                            <option value="question:text:asc">Question (A–Z)</option>
+                            <option value="question:text:desc">Question (Z–A)</option>
+                        </select>
+                    </div>
+                    <div class="tool">
+                        <button type="button" class="tool-btn" id="faqs-reset">Reset</button>
+                    </div>
+                </div>
+
+                <p class="result-count" id="faqs-count" aria-live="polite"></p>
+                <div class="status" id="faqs-status" role="status" aria-live="polite"></div>
+                <div class="card-grid" id="faqs-list" hidden></div>
+
+                <div class="pagination" id="faqs-pagination" role="navigation" aria-label="Frequently Asked Questions pages" hidden>
+                    <button type="button" class="page-btn" id="faqs-prev">Previous</button>
+                    <span class="page-label" id="faqs-page" aria-live="polite">Page 1 of 1</span>
+                    <button type="button" class="page-btn" id="faqs-next">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Student Hub Portal</p>
+        <p>Developed by Arshit Vaghela</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Normal (non-module) script, so it still runs when file:// blocks the module below
+        if (window.location.protocol === "file:") {
+            document.getElementById("file-warning").hidden = false;
+        }
+    </script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

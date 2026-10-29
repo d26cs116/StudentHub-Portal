@@ -1,0 +1,107 @@
+[
+ {
+  "n": "Loading indicator visible while GET runs",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "List: records from DB rendered",
+  "pass": true,
+  "d": "4 rows"
+ },
+ {
+  "n": "Loading hidden after load",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Empty submit shows validation errors, no POST",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Add: success message",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Add: new row in list (5 rows)",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Add: form reset",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Duplicate title -> 409 error shown",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Edit: form filled with record",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Edit: heading & button change",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Edit: updated value shown in list",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Edit: form back to Add mode",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Delete: confirm shown; Cancel keeps record",
+  "pass": true,
+  "d": "Delete “Annual Tech Fest”? This cannot be undone."
+ },
+ {
+  "n": "Delete: confirm accepted, record removed (4 rows)",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "HTML in title shown as text, not executed",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Edit of already-deleted record -> 404 message, list refreshed",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Network failure -> error state with message",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Retry button recovers after failure",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "Database unavailable (real db.php) -> safe error, no SQL/paths",
+  "pass": true,
+  "d": "The database is unavailable. Please check that MySQL is running and try again."
+ },
+ {
+  "n": "Empty database -> empty-state message",
+  "pass": true,
+  "d": ""
+ },
+ {
+  "n": "No uncaught JavaScript errors",
+  "pass": true,
+  "d": ""
+ }
+]

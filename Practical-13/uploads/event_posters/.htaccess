@@ -1,0 +1,27 @@
+# =====================================================================
+#  Safety rules for the poster upload folder (Apache / XAMPP).
+#  Only plain image files may be downloaded from here; scripts can never run.
+#  (Needs "AllowOverride All" for htdocs, which is XAMPP's default.)
+# =====================================================================
+Options -Indexes -ExecCGI -Includes
+
+# Never treat anything in this folder as PHP or another script
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .phar .phps .pl .py .cgi .sh
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .phar .phps
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+
+# Deny everything, then allow only image files
+Require all denied
+<FilesMatch "\.(jpg|jpeg|png|webp)$">
+    Require all granted
+</FilesMatch>
+
+# Stop browsers from guessing a different content type
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Notices (Fetch API)</title>
+    <!-- The same stylesheet as the rest of Student Hub (one folder up) -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Small additions for this page only (the main style.css is untouched) */
+        .notices-api .panel { margin-bottom: 2rem; }
+        .notices-api .panel h3 { margin-bottom: 0.4rem; }
+        .notices-api .list-heading { margin: 0.5rem 0 0; }
+        .notices-api .form-status { margin: 0 0 1rem; font-size: 1rem; }
+        .notices-api code { background: var(--mist); padding: 0.1rem 0.4rem; border-radius: 6px; }
+        .notices-table { min-width: 720px; }
+        .notices-table td { vertical-align: middle; }
+        .notices-table .notice-msg { max-width: 320px; color: var(--muted); }
+        .notices-table .act-link { background: transparent; font: inherit; font-weight: 700; font-size: 0.88rem; cursor: pointer; }
+        .notices-table .act-link:disabled { opacity: 0.5; cursor: not-allowed; }
+    </style>
+</head>
+
+<body class="portal">
+
+    <header>
+        <div class="logo">Student Hub</div>
+        <nav id="main-nav" aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="../dashboard.html">Dashboard</a>
+            <a href="../notices.html">Notices</a>
+            <a href="index.html" class="active">Notices API</a>
+            <a href="../login.php">Login</a>
+        </nav>
+        <div class="header-actions">
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">🌙</span> Dark</button>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="notices-api" aria-labelledby="api-title">
+
+            <div class="section-head">
+                <div>
+                    <h2 id="api-title">Notice Manager</h2>
+                    <p class="section-description">Practical 13 &ndash; every action below calls <code>api.php</code> with the Fetch API and shows the JSON answer from MySQL.</p>
+                </div>
+            </div>
+
+            <!-- Success / error message (filled by script.js) -->
+            <div id="message" class="form-status" role="status" aria-live="polite" hidden></div>
+
+            <!-- ============ ADD / EDIT FORM ============ -->
+            <div class="panel">
+                <h3 id="form-title">Add a notice</h3>
+                <form id="notice-form" class="reg-form" novalidate>
+                    <input type="hidden" id="notice-id" value="">
+                    <div class="form-grid">
+                        <div class="form-field full" id="field-title">
+                            <label for="title">Title <span aria-hidden="true">*</span></label>
+                            <input type="text" id="title" name="title" maxlength="100" placeholder="e.g. Sports Day Announcement" required>
+                            <p class="field-message" id="err-title"></p>
+                        </div>
+                        <div class="form-field" id="field-category">
+                            <label for="category">Category <span aria-hidden="true">*</span></label>
+                            <select id="category" name="category" required>
+                                <option value="">-- Select category --</option>
+                                <option>Academic</option>
+                                <option>Exam</option>
+                                <option>Event</option>
+                                <option>Holiday</option>
+                                <option>General</option>
+                            </select>
+                            <p class="field-message" id="err-category"></p>
+                        </div>
+                        <div class="form-field full" id="field-message">
+                            <label for="notice-message">Message <span aria-hidden="true">*</span></label>
+                            <textarea id="notice-message" name="message" rows="3" maxlength="500" placeholder="Write the notice (5 to 500 characters)" required></textarea>
+                            <p class="field-message" id="err-message"></p>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="reg-submit" id="save-btn">Add Notice</button>
+                        <button type="button" class="reg-reset" id="cancel-btn" hidden>Cancel edit</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- ============ LIST ============ -->
+            <h3 class="list-heading">All notices</h3>
+            <p class="result-count" id="result-count" aria-live="polite"></p>
+
+            <!-- Loading -->
+            <div class="status" id="loading" role="status" hidden>
+                <span class="spinner" aria-hidden="true"></span>
+                <span id="loading-text">Loading notices&hellip;</span>
+            </div>
+
+            <!-- Error (API / database / network problem) -->
+            <div class="status error" id="load-error" role="alert" hidden>
+                <p>❌ Could not load the notices.</p>
+                <p class="status-detail" id="load-error-detail"></p>
+                <button type="button" class="retry-btn" id="retry-btn">Try again</button>
+            </div>
+
+            <!-- Empty -->
+            <div class="status empty" id="empty" hidden>
+                <p>ℹ️ No notices yet. Use the form above to add the first one.</p>
+            </div>
+
+            <!-- Table -->
+            <div class="data-table-wrap" id="table-wrap" hidden>
+                <table class="data-table notices-table">
+                    <thead>
+                        <tr><th>ID</th><th>Title</th><th>Category</th><th>Message</th><th>Last updated</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="notice-rows"></tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Student Hub Portal</p>
+        <p>Developed by Arshit Vaghela</p>
+    </footer>
+
+    <!-- ../script.js = existing theme toggle + menu; script.js = Practical 13 Fetch code -->
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

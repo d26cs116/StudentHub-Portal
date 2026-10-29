@@ -1,0 +1,56 @@
+GET /practical13/api.php -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"4 notice(s) loaded.","data":[{"id":4,"title":"Annual Tech Fest","category":"Event","message":"Registrations for the annual tech fest are open until the end of this month.","created_at":"2026-10-27 16:45:39","updated_at":"2026-10-27 16:45:39"},{"id":3,"title":"Library Timin
+
+POST /practical13/api.php -> 201 Created | application/json; charset=utf-8
+    {"success":true,"message":"Notice added successfully.","data":{"id":5,"title":"Sports Day Announcement","category":"Event","message":"Annual sports day will be held on Friday at the main ground.","created_at":"2026-10-27 16:45:44","updated_at":"2026-10-27 16:45:44"}}
+
+GET /practical13/api.php -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"5 notice(s) loaded.","data":[{"id":5,"title":"Sports Day Announcement","category":"Event","message":"Annual sports day will be held on Friday at the main ground.","created_at":"2026-10-27 16:45:44","updated_at":"2026-10-27 16:45:44"},{"id":4,"title":"Annual Tech Fest","cat
+
+POST /practical13/api.php -> 409 Conflict | application/json; charset=utf-8
+    {"success":false,"message":"A notice with this title already exists. Choose a different title.","data":null,"errors":{"title":"This title is already used."}}
+
+PUT /practical13/api.php?id=3 -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"Notice updated successfully.","data":{"id":3,"title":"Library Timings Extended","category":"General","message":"The library now stays open until 10 PM during exams.","created_at":"2026-10-27 16:45:39","updated_at":"2026-10-27 16:45:39"}}
+
+GET /practical13/api.php -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"5 notice(s) loaded.","data":[{"id":5,"title":"Sports Day Announcement","category":"Event","message":"Annual sports day will be held on Friday at the main ground.","created_at":"2026-10-27 16:45:44","updated_at":"2026-10-27 16:45:44"},{"id":4,"title":"Annual Tech Fest","cat
+
+DELETE /practical13/api.php?id=4 -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"Notice deleted successfully.","data":{"id":4}}
+
+GET /practical13/api.php -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"4 notice(s) loaded.","data":[{"id":5,"title":"Sports Day Announcement","category":"Event","message":"Annual sports day will be held on Friday at the main ground.","created_at":"2026-10-27 16:45:44","updated_at":"2026-10-27 16:45:44"},{"id":3,"title":"Library Timings Extend
+
+POST /practical13/api.php -> 201 Created | application/json; charset=utf-8
+    {"success":true,"message":"Notice added successfully.","data":{"id":6,"title":"<img src=x onerror=window.__xss=1>","category":"General","message":"XSS rendering test text","created_at":"2026-10-27 16:45:46","updated_at":"2026-10-27 16:45:46"}}
+
+GET /practical13/api.php -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"5 notice(s) loaded.","data":[{"id":6,"title":"<img src=x onerror=window.__xss=1>","category":"General","message":"XSS rendering test text","created_at":"2026-10-27 16:45:46","updated_at":"2026-10-27 16:45:46"},{"id":5,"title":"Sports Day Announcement","category":"Event","m
+
+DELETE /practical13/api.php?id=6 -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"Notice deleted successfully.","data":{"id":6}}
+
+GET /practical13/api.php -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"4 notice(s) loaded.","data":[{"id":5,"title":"Sports Day Announcement","category":"Event","message":"Annual sports day will be held on Friday at the main ground.","created_at":"2026-10-27 16:45:44","updated_at":"2026-10-27 16:45:44"},{"id":3,"title":"Library Timings Extend
+
+PUT /practical13/api.php?id=2 -> 404 Not Found | application/json; charset=utf-8
+    {"success":false,"message":"Notice not found. It may already have been deleted.","data":null}
+
+GET /practical13/api.php -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"3 notice(s) loaded.","data":[{"id":5,"title":"Sports Day Announcement","category":"Event","message":"Annual sports day will be held on Friday at the main ground.","created_at":"2026-10-27 16:45:44","updated_at":"2026-10-27 16:45:44"},{"id":3,"title":"Library Timings Extend
+
+GET /practical13/api.php -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"3 notice(s) loaded.","data":[{"id":5,"title":"Sports Day Announcement","category":"Event","message":"Annual sports day will be held on Friday at the main ground.","created_at":"2026-10-27 16:45:44","updated_at":"2026-10-27 16:45:44"},{"id":3,"title":"Library Timings Extend
+
+GET http://127.0.0.1:8014/practical13/api.php -> 500 Internal Server Error | application/json; charset=utf-8
+    {"success":false,"message":"The database is unavailable. Please check that MySQL is running and try again.","data":null}
+
+GET /practical13/api.php -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"3 notice(s) loaded.","data":[{"id":5,"title":"Sports Day Announcement","category":"Event","message":"Annual sports day will be held on Friday at the main ground.","created_at":"2026-10-27 16:45:44","updated_at":"2026-10-27 16:45:44"},{"id":3,"title":"Library Timings Extend
+
+GET /practical13/api.php -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"3 notice(s) loaded.","data":[{"id":5,"title":"Sports Day Announcement","category":"Event","message":"Annual sports day will be held on Friday at the main ground.","created_at":"2026-10-27 16:45:44","updated_at":"2026-10-27 16:45:44"},{"id":3,"title":"Library Timings Extend
+
+GET /practical13/api.php -> 200 OK | application/json; charset=utf-8
+    {"success":true,"message":"No notices found.","data":[],"count":0}
