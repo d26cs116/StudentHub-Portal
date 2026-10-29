@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Hub - Attendance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body class="portal">
+    <header>
+        <div class="logo">Student Hub</div>
+        <nav id="main-nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="attendance.html" class="active">Attendance</a>
+            <a href="assignments.html">Assignments</a>
+            <a href="timetable.html">Timetable</a>
+            <a href="results.html">Results</a>
+            <a href="notices.html">Notices</a>
+            <a href="explore.html">Explore</a>
+            <a href="profile.html">Profile</a>
+            <a href="contact.php">Contact</a>
+            <a href="registration.html">Register</a>
+            <a href="login.html">Login</a>
+        </nav>
+        <div class="header-actions">
+            <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false"><span aria-hidden="true">🌙</span> Dark</button>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Attendance</h2>
+            <div class="attendance-grid">
+            <div class="att-card sub-dsa">
+                <h3>Data Structures</h3>
+                <div class="pct">90%</div>
+                <div class="meter"><i style="width:90%"></i></div>
+                <small>27 of 30 classes attended</small>
+            </div>
+            <div class="att-card sub-oop">
+                <h3>Object Oriented Programming</h3>
+                <div class="pct">86%</div>
+                <div class="meter"><i style="width:86%"></i></div>
+                <small>24 of 28 classes attended</small>
+            </div>
+            <div class="att-card sub-cn">
+                <h3>Computer Networks</h3>
+                <div class="pct">80%</div>
+                <div class="meter"><i style="width:80%"></i></div>
+                <small>20 of 25 classes attended</small>
+            </div>
+            <div class="att-card sub-web">
+                <h3>Web Development</h3>
+                <div class="pct">85%</div>
+                <div class="meter"><i style="width:85%"></i></div>
+                <small>22 of 26 classes attended</small>
+            </div>
+            <div class="att-card sub-maths">
+                <h3>Discrete Mathematics</h3>
+                <div class="pct">79%</div>
+                <div class="meter"><i style="width:79%"></i></div>
+                <small>19 of 24 classes attended</small>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Student Hub Portal</p>
+        <p>Developed by Arshit Vaghela</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
