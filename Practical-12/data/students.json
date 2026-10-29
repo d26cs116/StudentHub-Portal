@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Aarav Patel",
+    "email": "aarav.patel@student.example.edu",
+    "course": "Computer Science and Engineering",
+    "year": 2
+  },
+  {
+    "id": 2,
+    "name": "Diya Shah",
+    "email": "diya.shah@student.example.edu",
+    "course": "Computer Science and Engineering",
+    "year": 3
+  },
+  {
+    "id": 3,
+    "name": "Rohan Mehta",
+    "email": "rohan.mehta@student.example.edu",
+    "course": "Computer Science and Engineering",
+    "year": 1
+  },
+  {
+    "id": 4,
+    "name": "Ishita Desai",
+    "email": "ishita.desai@student.example.edu",
+    "course": "Computer Science and Engineering",
+    "year": 4
+  },
+  {
+    "id": 5,
+    "name": "Kabir Joshi",
+    "email": "kabir.joshi@student.example.edu",
+    "course": "Computer Science and Engineering",
+    "year": 2
+  },
+  {
+    "id": 6,
+    "name": "Meera Trivedi",
+    "email": "meera.trivedi@student.example.edu",
+    "course": "Computer Science and Engineering",
+    "year": 3
+  },
+  {
+    "id": 7,
+    "name": "Neel Parmar",
+    "email": "neel.parmar@student.example.edu",
+    "course": "Information Technology",
+    "year": 2
+  },
+  {
+    "id": 8,
+    "name": "Pooja Solanki",
+    "email": "pooja.solanki@student.example.edu",
+    "course": "Information Technology",
+    "year": 1
+  },
+  {
+    "id": 9,
+    "name": "Yash Rathod",
+    "email": "yash.rathod@student.example.edu",
+    "course": "Information Technology",
+    "year": 3
+  },
+  {
+    "id": 10,
+    "name": "Sneha Chauhan",
+    "email": "sneha.chauhan@student.example.edu",
+    "course": "Information Technology",
+    "year": 4
+  },
+  {
+    "id": 11,
+    "name": "Harsh Bhatt",
+    "email": "harsh.bhatt@student.example.edu",
+    "course": "Information Technology",
+    "year": 2
+  },
+  {
+    "id": 12,
+    "name": "Anika Gandhi",
+    "email": "anika.gandhi@student.example.edu",
+    "course": "Electronics and Communication",
+    "year": 1
+  },
+  {
+    "id": 13,
+    "name": "Vivaan Thakkar",
+    "email": "vivaan.thakkar@student.example.edu",
+    "course": "Electronics and Communication",
+    "year": 3
+  },
+  {
+    "id": 14,
+    "name": "Riya Pandya",
+    "email": "riya.pandya@student.example.edu",
+    "course": "Electronics and Communication",
+    "year": 2
+  },
+  {
+    "id": 15,
+    "name": "Dev Modi",
+    "email": "dev.modi@student.example.edu",
+    "course": "Mechanical Engineering",
+    "year": 4
+  },
+  {
+    "id": 16,
+    "name": "Tanvi Vyas",
+    "email": "tanvi.vyas@student.example.edu",
+    "course": "Mechanical Engineering",
+    "year": 2
+  },
+  {
+    "id": 17,
+    "name": "Karan Dave",
+    "email": "karan.dave@student.example.edu",
+    "course": "Mechanical Engineering",
+    "year": 1
+  },
+  {
+    "id": 18,
+    "name": "Jiya Amin",
+    "email": "jiya.amin@student.example.edu",
+    "course": "Civil Engineering",
+    "year": 3
+  },
+  {
+    "id": 19,
+    "name": "Om Kapadia",
+    "email": "om.kapadia@student.example.edu",
+    "course": "Civil Engineering",
+    "year": 2
+  },
+  {
+    "id": 20,
+    "name": "Palak Rana",
+    "email": "palak.rana@student.example.edu",
+    "course": "Civil Engineering",
+    "year": 4
+  }
+]
