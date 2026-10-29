@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "How is my attendance percentage calculated?",
+    "answer": "Attendance is the number of classes you attended divided by the total classes held, multiplied by 100.",
+    "category": "Attendance"
+  },
+  {
+    "id": 2,
+    "question": "Where can I see my subject-wise attendance?",
+    "answer": "Open the Attendance page. Every subject shows the classes attended, the total classes and the percentage.",
+    "category": "Attendance"
+  },
+  {
+    "id": 3,
+    "question": "What should I do if my attendance looks wrong?",
+    "answer": "Note the subject and date, then contact your subject teacher or use the Contact page to report it.",
+    "category": "Attendance"
+  },
+  {
+    "id": 4,
+    "question": "Does attendance include practical sessions?",
+    "answer": "Practical sessions are counted by the department. Check the subject details on the Attendance page.",
+    "category": "Attendance"
+  },
+  {
+    "id": 5,
+    "question": "Where can I see my pending assignments?",
+    "answer": "The Assignments page lists every assignment with its subject, due date and status.",
+    "category": "Assignments"
+  },
+  {
+    "id": 6,
+    "question": "What do the Pending and Submitted labels mean?",
+    "answer": "Pending means the assignment has not been submitted yet. Submitted means your teacher has received it.",
+    "category": "Assignments"
+  },
+  {
+    "id": 7,
+    "question": "Can I submit an assignment after the due date?",
+    "answer": "Ask your subject teacher. Late submissions are accepted only if the teacher allows it.",
+    "category": "Assignments"
+  },
+  {
+    "id": 8,
+    "question": "How many assignments are there in a semester?",
+    "answer": "The number depends on the subject. The Assignments page always shows the current list.",
+    "category": "Assignments"
+  },
+  {
+    "id": 9,
+    "question": "Where can I find my semester results?",
+    "answer": "Open the Results page to see your marks, grade for each subject and your semester SGPA.",
+    "category": "Results"
+  },
+  {
+    "id": 10,
+    "question": "What is SGPA?",
+    "answer": "SGPA stands for Semester Grade Point Average. It is the average grade points you earned in one semester.",
+    "category": "Results"
+  },
+  {
+    "id": 11,
+    "question": "What does grade B+ mean?",
+    "answer": "B+ is a grade given for good marks, just below the A grade.",
+    "category": "Results"
+  },
+  {
+    "id": 12,
+    "question": "Who do I contact if my marks are incorrect?",
+    "answer": "Send the subject name and your student ID to the department using the Contact page.",
+    "category": "Results"
+  },
+  {
+    "id": 13,
+    "question": "How do I log in to Student Hub?",
+    "answer": "Open the Login page, enter your Student ID or username and your password, then press Login.",
+    "category": "Account"
+  },
+  {
+    "id": 14,
+    "question": "How do I create a new account?",
+    "answer": "Use the Register page and fill in your details. Every field is checked before the form is accepted.",
+    "category": "Account"
+  },
+  {
+    "id": 15,
+    "question": "What should I do if I forget my password?",
+    "answer": "Contact the department office. They can help you set a new password.",
+    "category": "Account"
+  },
+  {
+    "id": 16,
+    "question": "How do I log out?",
+    "answer": "Press the Log Out button on the Dashboard or Profile page.",
+    "category": "Account"
+  },
+  {
+    "id": 17,
+    "question": "Does Student Hub work on my phone?",
+    "answer": "Yes. The pages adjust to the screen size and the menu turns into a hamburger button on small screens.",
+    "category": "General"
+  },
+  {
+    "id": 18,
+    "question": "Can I use dark mode?",
+    "answer": "Yes. Press the Dark button in the top bar. Your choice is remembered the next time you visit.",
+    "category": "General"
+  },
+  {
+    "id": 19,
+    "question": "Where can I see the college notices?",
+    "answer": "Open the Notices page for the latest announcements, with the newest first.",
+    "category": "General"
+  },
+  {
+    "id": 20,
+    "question": "How do I contact the department?",
+    "answer": "Use the Contact page, fill in the form and press Send Message.",
+    "category": "General"
+  }
+]
